@@ -1,23 +1,23 @@
 import React, { useState } from "react";
-import BarraNavegacao from "./barraNavegacao";
-import FormularioCadastroCliente from "./formularioCadastroCliente";
-import FormularioCadastroPet from "./formularioCadastroPet";
-import FormularioCadastroProduto from "./formularioCadastroProduto";
-import FormularioCadastroServico from "./formularioCadastroServico";
-import FormularioConsumoProduto from "./formularioConsumoProduto";
-import FormularioConsumoServico from "./formularioConsumoServico";
-import ListaCliente from "./listaCliente";
-import ListaPet from "./listaPets";
-import ListaServico from "./listaServicos";
-import ListaProduto from "./listaProdutos";
-import ListaClientesMaisConsumiramQuantidade from "./listaClientesMaisConsumiramQuantidade";
-import ListaGeralMaisConsumidos from "./listaGeralMaisConsumidos";
-import ListaServProdMaisConsumidosTipoRaca from "./listaServProdMaisConsumidosTipoRaca";
-import ListaClientesMaisConsumiramValor from "./listaClientesMaisConsumiramValor";
-import DetalhesCliente from "./detalhesCliente";
-import DetalhesPet from "./detalhesPet";
-import DetalhesProduto from "./detalhesProduto";
-import DetalhesServico from "./detalhesServico";
+import BarraNavegacao from "../components/barraNavegacao";
+import FormularioCadastroCliente from "../components/cadastros/formularioCadastroCliente";
+import FormularioCadastroPet from "../components/cadastros/formularioCadastroPet";
+import FormularioCadastroProduto from "../components/cadastros/formularioCadastroProduto";
+import FormularioCadastroServico from "../components/cadastros/formularioCadastroServico";
+import FormularioConsumoProduto from "../components/consumo/formularioConsumoProduto";
+import FormularioConsumoServico from "../components/consumo/formularioConsumoServico";
+import ListaCliente from "../components/listagens/listaCliente";
+import ListaPet from "../components/listagens/listaPets";
+import ListaServico from "../components/listagens/listaServicos";
+import ListaProduto from "../components/listagens/listaProdutos";
+import ListaClientesMaisConsumiramQuantidade from "../components/listagens/listaClientesMaisConsumiramQuantidade";
+import ListaGeralMaisConsumidos from "../components/listagens/listaGeralMaisConsumidos";
+import ListaServProdMaisConsumidosTipoRaca from "../components/listagens/listaServProdMaisConsumidosTipoRaca";
+import ListaClientesMaisConsumiramValor from "../components/listagens/listaClientesMaisConsumiramValor";
+import DetalhesCliente from "../components/detalhes/detalhesCliente";
+import DetalhesPet from "../components/detalhes/detalhesPet";
+import DetalhesProduto from "../components/detalhes/detalhesProduto";
+import DetalhesServico from "../components/detalhes/detalhesServico";
 
 export default function Roteador() {
   const [tela, setTela] = useState("Cadastrar");
@@ -46,9 +46,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Cadastrar um cliente</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Cadastrar um cliente</h2>
             <FormularioCadastroCliente tema="#e3f2fd" />
           </>
         );
@@ -66,9 +64,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Cadastrar um cliente</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Cadastrar um cliente</h2>
             <FormularioCadastroCliente tema="#e3f2fd" />
           </>
         );
@@ -86,9 +82,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Cadastrar um Pet</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Cadastrar um Pet</h2>
             <FormularioCadastroPet tema="#e3f2fd" />
           </>
         );
@@ -106,9 +100,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Cadastrar um produto</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Cadastrar um produto</h2>
             <FormularioCadastroProduto tema="#e3f2fd" />
           </>
         );
@@ -126,9 +118,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Cadastrar um serviço</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Cadastrar um serviço</h2>
             <FormularioCadastroServico tema="#e3f2fd" />
           </>
         );
@@ -146,9 +136,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Consumir um produto</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Consumir um produto</h2>
             <FormularioConsumoProduto tema="#e3f2fd" />
           </>
         );
@@ -166,9 +154,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Consumir um produto</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Consumir um produto</h2>
             <FormularioConsumoProduto tema="#e3f2fd" />
           </>
         );
@@ -186,9 +172,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Consumir um serviço</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Consumir um serviço</h2>
             <FormularioConsumoServico tema="#e3f2fd" />
           </>
         );
@@ -206,9 +190,7 @@ export default function Roteador() {
               "Consumos"
             ]}
           />
-          <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Listagem de Clientes</h2>
-            </div>
+          <h2 style={{ marginLeft: "40px" }}>Listagem de Clientes</h2>
           <ListaCliente tema="#e3f2fd" />
         </>
       );
@@ -226,9 +208,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Listagem de clientes</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Listagem de clientes</h2>
             <ListaCliente tema="#e3f2fd" />
           </>
         );
@@ -246,9 +226,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Listagem de pets</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Listagem de pets</h2>
             <ListaPet tema="#e3f2fd" />
           </>
         );
@@ -266,9 +244,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Listagem de produtos</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Listagem de produtos</h2>
             <ListaProduto tema="#e3f2fd" />
           </>
         );
@@ -286,9 +262,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Listagem de serviços</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Listagem de serviços</h2>
             <ListaServico tema="#e3f2fd" />
           </>
         );
@@ -306,9 +280,7 @@ export default function Roteador() {
               "Consumos"
             ]}
           />
-          <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Lista 10 clientes que mais consumiram em quantidade</h2>
-            </div>
+          <h2 style={{ marginLeft: "40px" }}>Lista 10 clientes que mais consumiram em quantidade</h2>
           <ListaClientesMaisConsumiramQuantidade tema="#e3f2fd" />
         </>
       );
@@ -326,9 +298,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Lista 10 clientes que mais consumiram em quantidade</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Lista 10 clientes que mais consumiram em quantidade</h2>
             <ListaClientesMaisConsumiramQuantidade tema="#e3f2fd" />
           </>
         );
@@ -346,9 +316,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Lista 5 clientes que mais consumiram em valor</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Lista 5 clientes que mais consumiram em valor</h2>
             <ListaClientesMaisConsumiramValor tema="#e3f2fd" />
           </>
         );
@@ -366,9 +334,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}> geral dos serviços/produtos mais consumidos</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Lista geral dos serviços/produtos mais consumidos</h2>
             <ListaGeralMaisConsumidos tema="#e3f2fd" />
           </>
         );
@@ -386,9 +352,7 @@ export default function Roteador() {
                 "Consumos"
               ]}
             />
-            <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Lista dos serviços/produtos mais consumidos por tipo e raça de pets</h2>
-            </div>
+            <h2 style={{ marginLeft: "40px" }}>Lista dos serviços/produtos mais consumidos por tipo e raça de pets</h2>
             <ListaServProdMaisConsumidosTipoRaca tema="#e3f2fd" />
           </>
         );
@@ -408,10 +372,8 @@ export default function Roteador() {
               "Consumos"
             ]}
           />
-          <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Detalhes do Cliente</h2>
+          <h2 style={{ marginLeft: "40px" }}>Detalhes do Cliente</h2>
           <DetalhesCliente tema="#e3f2fd" />
-          </div>
         </>
       );
     } else if (tela === "DetalhesPet") {
@@ -427,10 +389,8 @@ export default function Roteador() {
               "Consumos"
             ]}
           />
-          <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Detalhes do Pet</h2>
+          <h2 style={{ marginLeft: "40px" }}>Detalhes do Pet</h2>
           <DetalhesPet tema="#e3f2fd" />
-          </div>
         </>
       );
     } else if (tela === "DetalhesProduto") {
@@ -446,10 +406,8 @@ export default function Roteador() {
               "Consumos"
             ]}
           />
-          <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Detalhes do Produto</h2>
+          <h2 style={{ marginLeft: "40px" }}>Detalhes do Produto</h2>
           <DetalhesProduto tema="#e3f2fd" />
-          </div>
         </>
       );
     } else if (tela === "DetalhesServico") {
@@ -465,10 +423,8 @@ export default function Roteador() {
               "Consumos"
             ]}
           />
-          <div className="d-flex justify-content-center">
-            <h2 style={{ margin: "40px" }}>Detalhes do Serviço</h2>
+          <h2 style={{ marginLeft: "40px" }}>Detalhes do Serviço</h2>
           <DetalhesServico tema="#e3f2fd" />
-          </div>
         </>
       );
     }

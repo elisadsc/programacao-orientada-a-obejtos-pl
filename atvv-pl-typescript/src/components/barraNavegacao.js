@@ -22,14 +22,14 @@ export default function BarraNavegacao(props) {
     setDropdownListagemAberto(false);
     setDropdownConsumosAberto(false);
   };
-
+  
   const alternarDropdownListagem = () => {
     setDropdownCadastrarAberto(false);
     setDropdownConsumirAberto(false);
     setDropdownListagemAberto(!dropdownListagemAberto);
     setDropdownConsumosAberto(false);
   };
-
+  
   const alternarDropdownConsumos = () => {
     setDropdownCadastrarAberto(false);
     setDropdownConsumirAberto(false);
