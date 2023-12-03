@@ -29,7 +29,12 @@ export default function FormularioCadastroProduto(props) {
 
     //ação ao clicar no botão de cadastro
     const handleClickButton = () => {
+        axios.post("http://localhost:3001/produtos", {
+            nome: values.nome,
+            valor: values.valor
+        }).then((response) => {
             clearCampos();
+        });
     }
 
     return (

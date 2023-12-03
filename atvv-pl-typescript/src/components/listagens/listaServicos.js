@@ -10,10 +10,15 @@ export default function ListaServico(props) {
 
     const tema = props.tema;
 
-    const servico = {
-      nome: 'Serviço',
-      valor: 'R$10,00'
-    }
+    useEffect(() => {
+      axios.get("http://localhost:3001/listagemServicos")
+        .then(response => {
+          setServicos(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }, []);
   
     //função que salva o serviço selecionado para exibir detalhes
     const selecionarServico = (servico) => {
@@ -33,6 +38,7 @@ export default function ListaServico(props) {
         <DetalhesServico servico={servicoSelecionado} voltarLista={voltarLista} />
       ) : (
         <div className="list-group" style={{ width: "600px" }}>
+          {servicos.map(servico => (
             <a
               key={servico.id}
               href="#"
@@ -41,6 +47,7 @@ export default function ListaServico(props) {
             >
               {servico.nome}
             </a>
+            ))}
         </div>
       )}
     </div>

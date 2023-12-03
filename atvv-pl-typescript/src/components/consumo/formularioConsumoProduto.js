@@ -31,7 +31,13 @@ export default function FormularioConsumoProduto(props) {
 
     //ação ao clicar no botão de cadastro
     const handleClickButton = () => {
+        axios.post("http://localhost:3001/relacaoProduto", {
+            cpfCliente: values.cpfCliente,
+            nomePet: values.nomePet,
+            nomeProduto: values.nomeProduto
+        }).then((response) => {
             clearCampos();
+        });
     }
 
     return (

@@ -29,7 +29,12 @@ export default function FormularioCadastroServico(props) {
 
     //ação ao clicar no botão de cadastro
     const handleClickButton = () => {
+        axios.post("http://localhost:3001/servicos", {
+            nome: values.nome,
+            valor: values.valor
+        }).then((response) => {
             clearCampos();
+        });
     }
 
     return (

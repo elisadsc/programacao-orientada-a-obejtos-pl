@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react'
+import axios from "axios";
+import React, { useEffect, useState } from 'react'
 import DetalhesProduto from "../detalhes/detalhesProduto";
 
 export default function ListaServico(props) {
@@ -9,10 +10,15 @@ export default function ListaServico(props) {
 
     const tema = props.tema;
 
-    const produto = {
-      nome: 'Produto',
-      valor: 'R$10,00'
-    }
+    useEffect(() => {
+      axios.get("http://localhost:3001/listagemProdutos")
+        .then(response => {
+          setProdutos(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }, []);
   
     //função que salva o produto selecionado para exibir detalhes
     const selecionarProduto = (produto) => {
@@ -32,6 +38,7 @@ export default function ListaServico(props) {
         <DetalhesProduto produto={produtoSelecionado} voltarLista={voltarLista} />
       ) : (
         <div className="list-group" style={{ width: "600px" }}>
+          {produtos.map(produto => (
             <a
               key={produto.id}
               href="#"
@@ -40,6 +47,7 @@ export default function ListaServico(props) {
             >
               {produto.nome}
             </a>
+            ))}
         </div>
       )}
     </div>

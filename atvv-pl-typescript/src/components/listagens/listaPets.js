@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react'
+import axios from "axios";
+import React, { useEffect, useState } from 'react'
 import DetalhesPet from "../detalhes/detalhesPet";
 
 export default function ListaPet(props) {
@@ -7,14 +8,15 @@ export default function ListaPet(props) {
   const [petSelecionado, setPetSelecionado] = useState(null);
   const [exibirDetalhes, setExibirDetalhes] = useState(false);
 
-  const pet = {
-    id: 1,
-    tutor: 'Teste',
-    nome: 'Pet',
-    tipo: 'Gato',
-    raca: 'Gato?',
-    genero: 'Fêmea',
-  }
+  useEffect(() => {
+    axios.get("http://localhost:3001/listagemPets")
+      .then(response => {
+        setPets(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
 
   //função que salva o pet selecionado para exibir detalhes
   const selecionarPet = (pet) => {
@@ -34,6 +36,7 @@ export default function ListaPet(props) {
         <DetalhesPet pet={petSelecionado} voltarLista={voltarLista} />
       ) : (
         <div className="list-group" style={{ width: "600px" }}>
+          {pets.map(pet => (
             <a
               key={pet.id}
               href="#"
@@ -42,6 +45,7 @@ export default function ListaPet(props) {
             >
               {pet.nome}
             </a>
+            ))}
         </div>
       )}
     </div>

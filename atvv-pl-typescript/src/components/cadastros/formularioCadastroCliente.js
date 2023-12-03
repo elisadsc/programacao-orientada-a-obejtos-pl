@@ -41,7 +41,20 @@ export default function FormularioCadastroCliente(props) {
 
   //ação ao clicar no botão de cadastro
   const handleClickButton = () => {
-    clearCampos();
+    const dataCadastro = new Date().toLocaleString();
+    axios.post("http://localhost:3001/clientes", {
+      nome: values.nome,
+      nomeSocial: values.nomeSocial,
+      dataCadastro: dataCadastro,
+      cpf: values.cpf,
+      dataCpf: values.dataCpf,
+      rg: values.rg,
+      dataRg: values.dataRg,
+      ddd: values.ddd,
+      telefone: values.telefone
+    }).then((response) => {
+      clearCampos();
+    });
   }
 
   return (

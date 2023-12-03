@@ -1,24 +1,22 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
+import axios from "axios";
+import React, { useEffect, useState } from 'react';
 import DetalhesCliente from "../detalhes/detalhesCliente";
 
 export default function ListaCliente(props) {
+  const [clientes, setClientes] = useState([]);
   const [clienteSelecionado, setClienteSelecionado] = useState(null);
   const [exibirDetalhes, setExibirDetalhes] = useState(false);
 
-  //cliente mockado
-  const cliente = {
-    id: 1,
-    nome: 'Teste',
-    nomeSocial: 'Teste',
-    cpf: 12345678912,
-    dataCpf: '01/01/2001',
-    rg: 123456789123,
-    dataRg: '01/01/2001',
-    telefone: 12999999999,
-    produtosConsumidos: 'x',
-    servicosConsumidos: 'x'
-  }
+  useEffect(() => {
+    axios.get("http://localhost:3001/listagemClientes")
+      .then(response => {
+        setClientes(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
 
   //função que salva o cliente selecionado para exibir detalhes
   const selecionarCliente = (cliente) => {
@@ -38,6 +36,7 @@ export default function ListaCliente(props) {
         <DetalhesCliente cliente={clienteSelecionado} voltarLista={voltarLista} />
       ) : (
         <div className="list-group" style={{ width: "600px" }}>
+          {clientes.map(cliente => (
             <a
               key={cliente.id}
               href="#"
@@ -46,6 +45,7 @@ export default function ListaCliente(props) {
             >
               {cliente.nome}
             </a>
+            ))}
         </div>
       )}
     </div>

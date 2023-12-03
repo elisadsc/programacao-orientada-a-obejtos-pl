@@ -31,7 +31,13 @@ export default function FormularioConsumoServico(props) {
 
     //ação ao clicar no botão de cadastro
     const handleClickButton = () => {
+        axios.post("http://localhost:3001/relacaoServico", {
+            cpfCliente: values.cpfCliente,
+            nomePet: values.nomePet,
+            nomeServico: values.nomeServico
+        }).then((response) => {
             clearCampos();
+        });
     }
 
     return (

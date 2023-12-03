@@ -35,7 +35,15 @@ export default function FormularioCadastroPet(props) {
 
       //ação ao clicar no botão de cadastro
       const handleClickButton = () => {
+        axios.post("http://localhost:3001/pets", {
+            cpfTutor: values.cpfTutor,
+            nome: values.nome,
+            raca: values.raca,
+            genero: values.genero,
+            tipo: values.tipo
+        }).then((response) => {
           clearCampos();
+        });
       }
 
     return (
