@@ -22,8 +22,11 @@ Pra rodar a atviv:
 - npm start
 <br>
 Pra rodar a atvv:
+```
 - npm install
 - npm start 
+```
+
 <br>
 Alterar as configurações do banco no arquivo database.js dentro da pasta connection
 
