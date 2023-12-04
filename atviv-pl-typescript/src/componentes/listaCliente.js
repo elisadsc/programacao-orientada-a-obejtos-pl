@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
-import DetalhesCliente from "../detalhes/detalhesCliente";
+import DetalhesCliente from "./detalhesCliente";
 
 export default function ListaCliente(props) {
   const [clienteSelecionado, setClienteSelecionado] = useState(null);
