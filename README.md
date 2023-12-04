@@ -1,2 +1,2 @@
-# programacao-orientada-a-obejtos-pl
+# programacao-orientada-a-objetos-pl
  
